@@ -1,0 +1,35 @@
+{
+  "paths": [
+    {
+      "name": "/items",
+      "lambdaFunction": "listItems",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/items"
+    }
+  ],
+  "resourceName": "myapi",
+  "apiName": "myapi",
+  "functionArns": [
+    {
+      "lambdaFunction": "listItems"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-amplifypoc-dev-95452-authRole",
+    "unAuthRoleName": "amplify-amplifypoc-dev-95452-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "listItems",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}
