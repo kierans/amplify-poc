@@ -34,7 +34,10 @@
     },
     "categories": {
       "function": {
-        "listItems": {}
+        "listItems": {
+          "deploymentBucketName": "amplify-amplifypoc-prod-100318-deployment",
+          "s3Key": "amplify-builds/listItems-4f39697a6e4769545549-build.zip"
+        }
       }
     }
   }
