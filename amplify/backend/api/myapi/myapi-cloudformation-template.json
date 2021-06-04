@@ -29,7 +29,17 @@
       "Type": "AWS::ApiGateway::RestApi",
       "Properties": {
         "Description": "",
-        "Name": "myapi",
+        "Name": {
+          "Fn::Join": [
+            "",
+            [
+              "myapi-",
+              {
+                "Ref": "env"
+              }
+            ]
+          ]
+        },
         "Body": {
           "swagger": "2.0",
           "info": {
@@ -52,17 +62,7 @@
             "Fn::If": [
               "ShouldNotCreateEnvResources",
               "/Prod",
-              {
-                "Fn::Join": [
-                  "",
-                  [
-                    "/",
-                    {
-                      "Ref": "env"
-                    }
-                  ]
-                ]
-              }
+              "/amplify"
             ]
           },
           "schemes": [
@@ -336,9 +336,7 @@
           "Fn::If": [
             "ShouldNotCreateEnvResources",
             "Prod",
-            {
-              "Ref": "env"
-            }
+            "amplify"
           ]
         },
         "RestApiId": {
@@ -367,9 +365,7 @@
               "Fn::If": [
                 "ShouldNotCreateEnvResources",
                 "Prod",
-                {
-                  "Ref": "env"
-                }
+                "amplify"
               ]
             }
           ]
